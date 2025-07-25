@@ -253,7 +253,6 @@ export function generateScriptPDFWithImages(
   // Generate filename with timestamp
   const timestamp = new Date().toISOString().slice(0, 19).replace(/:/g, '-')
   const filename = `manga-script-with-images-${timestamp}.pdf`
-
   // Save the PDF
   doc.save(filename)
 }
