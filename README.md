@@ -1,4 +1,4 @@
-# RecapScript Maker - Clean Version
+# MangaNarrate - Clean Version
 
 A minimal manga/manhwa recap script generator with drag-and-drop image reordering and AI integration. Built with **zero external dependencies** beyond Next.js essentials.
 
@@ -7,7 +7,7 @@ A minimal manga/manhwa recap script generator with drag-and-drop image reorderin
 - 🖼️ **Image Upload**: Drag & drop up to 100 images (max 4MB each)
 - 🔄 **Native Drag & Drop**: Pure HTML5 drag and drop with smooth animations
 - 📊 **Batch Counter**: Shows total number of uploaded images
-- 🤖 **AI Model Selection**: Support for OpenAI, Gemini, and Grok
+- 🤖 **AI Model Selection**: Right now it only support Gemini
 - 📝 **Prompt Configuration**: Main prompt, negative prompt, and character list
 - 🔒 **Local API Key Storage**: Secure local storage for API keys
 - 🌙 **Dark Theme**: Clean dark UI design with green accents
@@ -46,9 +46,7 @@ npm run dev
 ## API Keys
 
 Go to Settings to configure your API keys:
-- **OpenAI**: https://platform.openai.com/api-keys
 - **Google Gemini**: https://makersuite.google.com/app/apikey
-- **xAI Grok**: https://console.x.ai/
 
 Keys are stored locally in your browser and never sent to external servers.
 
