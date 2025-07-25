@@ -46,9 +46,7 @@ npm run dev
 ## API Keys
 
 Go to Settings to configure your API keys:
-- **OpenAI**: https://platform.openai.com/api-keys
 - **Google Gemini**: https://makersuite.google.com/app/apikey
-- **xAI Grok**: https://console.x.ai/
 
 Keys are stored locally in your browser and never sent to external servers.
 
