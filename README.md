@@ -7,7 +7,7 @@ A minimal manga/manhwa recap script generator with drag-and-drop image reorderin
 - 🖼️ **Image Upload**: Drag & drop up to 100 images (max 4MB each)
 - 🔄 **Native Drag & Drop**: Pure HTML5 drag and drop with smooth animations
 - 📊 **Batch Counter**: Shows total number of uploaded images
-- 🤖 **AI Model Selection**: Support for OpenAI, Gemini, and Grok
+- 🤖 **AI Model Selection**: Right now it only support Gemini
 - 📝 **Prompt Configuration**: Main prompt, negative prompt, and character list
 - 🔒 **Local API Key Storage**: Secure local storage for API keys
 - 🌙 **Dark Theme**: Clean dark UI design with green accents
