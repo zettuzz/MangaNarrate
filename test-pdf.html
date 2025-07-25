@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Test</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <h1>PDF Generation Test</h1>
+    <button onclick="testPDF()">Generate Test PDF</button>
+    
+    <script>
+        function testPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            
+            const testScript = `**Panel 1:**
+This is a test manga script to verify PDF generation is working correctly.
+
+**Panel 2:**
+The hero stands at the edge of a cliff, looking out over the vast landscape below. The wind whips through their hair as they contemplate the journey ahead.
+
+**Panel 3:**
+A mysterious figure appears from the shadows, their face hidden beneath a dark hood. They speak in a low, ominous voice about the challenges that await.`;
+
+            // Set font and styling
+            doc.setFont('helvetica', 'normal');
+            doc.setFontSize(12);
+
+            // Page dimensions
+            const pageWidth = doc.internal.pageSize.getWidth();
+            const margin = 20;
+            const maxWidth = pageWidth - (margin * 2);
+            const lineHeight = 7;
+
+            // Add title
+            doc.setFontSize(18);
+            doc.setFont('helvetica', 'bold');
+            doc.text('Test Manga Script', margin, margin + 10);
+
+            // Add generation date
+            doc.setFontSize(10);
+            doc.setFont('helvetica', 'normal');
+            const date = new Date().toLocaleDateString();
+            doc.text(`Generated on: ${date}`, margin, margin + 20);
+
+            // Reset font for content
+            doc.setFontSize(12);
+            doc.setFont('helvetica', 'normal');
+
+            // Split script into lines and handle text wrapping
+            let yPosition = margin + 35;
+            const lines = testScript.split('\n');
+
+            for (const line of lines) {
+                if (line.trim() === '') {
+                    yPosition += lineHeight / 2;
+                    continue;
+                }
+
+                // Check if this is a panel header
+                if (line.startsWith('**') && line.endsWith('**')) {
+                    doc.setFont('helvetica', 'bold');
+                    doc.setFontSize(14);
+                    
+                    if (yPosition > margin + 35) {
+                        yPosition += lineHeight;
+                    }
+                    
+                    const headerText = line.replace(/\*\*/g, '');
+                    doc.text(headerText, margin, yPosition);
+                    yPosition += lineHeight + 2;
+                    
+                    doc.setFont('helvetica', 'normal');
+                    doc.setFontSize(12);
+                } else {
+                    const wrappedLines = doc.splitTextToSize(line, maxWidth);
+                    
+                    for (const wrappedLine of wrappedLines) {
+                        doc.text(wrappedLine, margin, yPosition);
+                        yPosition += lineHeight;
+                    }
+                }
+            }
+
+            // Save the PDF
+            doc.save('test-manga-script.pdf');
+            alert('PDF generated successfully!');
+        }
+    </script>
+</body>
+</html>
