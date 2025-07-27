@@ -82,3 +82,6 @@ This project requires **NO** environment variables. All API keys are managed cli
 4. Test thoroughly
 5. Submit a pull request
 
+## License
+This project is licensed under the MIT License.
+
