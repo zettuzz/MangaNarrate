@@ -1,4 +1,4 @@
-# MangaNarrate - Clean Version
+# MangaNarrate
 
 A minimal manga/manhwa recap script generator with drag-and-drop image reordering and AI integration. Built with **zero external dependencies** beyond Next.js essentials.
 
