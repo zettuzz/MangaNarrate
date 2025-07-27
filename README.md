@@ -70,21 +70,6 @@ Keys are stored locally in your browser and never sent to external servers.
 ✅ **Dark Theme**: Beautiful dark-first design
 ✅ **Type Safety**: Full TypeScript support
 
-## Project Structure
-
-\`\`\`
-/app
-  page.tsx                 # Main application page
-  settings/page.tsx        # API key management
-  layout.tsx              # Root layout
-  globals.css             # Global styles and animations
-
-package.json              # Minimal dependencies
-tailwind.config.js        # Tailwind configuration
-next.config.mjs          # Next.js configuration
-README.md                # This file
-\`\`\`
-
 ## Environment Variables
 
 This project requires **NO** environment variables. All API keys are managed client-side for maximum security.
